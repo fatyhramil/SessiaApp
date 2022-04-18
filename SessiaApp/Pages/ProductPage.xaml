@@ -1,0 +1,88 @@
+﻿<Page x:Class="SessiaApp.Pages.ProductPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SessiaApp.Pages" xmlns:super="clr-namespace:SessiaApp.Classes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ProductPage">
+    <Page.Resources>
+        <super:ImageConverter x:Key="ImageConverterKey"/>
+        <Style x:Key="itemstyle" TargetType="{x:Type ListViewItem}">
+            <EventSetter Event="MouseDoubleClick" Handler="HandleDoubleClick" />
+            <Setter Property="Margin" Value="10,10,10,0"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Height" Value="100"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="400"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <TextBox x:Name="SearchName" TextChanged="SearchName_TextChanged" Margin="10" Width="100"/>
+            <ComboBox x:Name="SortAscDescCB" Width="100" Margin="10" SelectionChanged="SortAscDescCB_SelectionChanged">
+                <ComboBoxItem Content="По возрастанию"/>
+                <ComboBoxItem Content="По убыванию"/>
+            </ComboBox>
+            <ComboBox x:Name="FilterTypeCB" SelectionChanged="FilterTypeCB_SelectionChanged" Width="100" Margin="10"/>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <ListView x:Name="ProductsListView" ScrollViewer.CanContentScroll="True" ItemContainerStyle="{StaticResource itemstyle}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderBrush="Black" BorderThickness="1">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3*"/>
+                                    <ColumnDefinition Width="10*"/>
+                                    <ColumnDefinition Width="3*"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="{Binding Image, Converter={StaticResource ImageConverterKey}}" Grid.Column="0" Width="90" Height="90"/>
+                                <StackPanel Grid.Column="1" Orientation="Vertical" Margin="10,0,0,0">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Тип: "/>
+                                        <TextBlock Text="{Binding ProductType.TypeName}"/>
+                                        <TextBlock Text=" | Название: "/>
+                                        <TextBlock Text="{Binding ProductName}"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Артикул: "/>
+                                        <TextBlock Text="{Binding Code}"/>
+                                    </StackPanel>
+                                    <TextBlock Text="Материалы: "/>
+                                    <ListView ItemsSource="{Binding ProductMaterial}" Width="300" Height="300">
+                                        <ItemsControl.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <WrapPanel Orientation="Horizontal" />
+                                            </ItemsPanelTemplate>
+                                        </ItemsControl.ItemsPanel>
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding Material.Name}"/>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                </StackPanel>
+                                <StackPanel Grid.Column="3" HorizontalAlignment="Right">
+                                    <TextBlock Text="Стоимость: "/>
+                                    <TextBlock Text="{Binding MinimalPrice}"/>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Button x:Name="AddProductBtn" Content="Добавить продукт" Margin="10" Click="AddProductBtn_Click"/>
+            <Button x:Name="DeleteProductBtn" Content="Удалить продукт" Margin="10" Click="DeleteProductBtn_Click"/>
+            <Button x:Name="ClearFilter" Content="Очистить фильтр" Margin="10" Click="ClearFilter_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

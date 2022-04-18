@@ -1,0 +1,6 @@
+D:\Programming\WPF\SessiaApp\WSUniversalLibUnitTest\obj\Debug\net6.0\WSUniversalLibUnitTest.csproj.AssemblyReference.cache
+D:\Programming\WPF\SessiaApp\WSUniversalLibUnitTest\obj\Debug\net6.0\WSUniversalLibUnitTest.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programming\WPF\SessiaApp\WSUniversalLibUnitTest\obj\Debug\net6.0\WSUniversalLibUnitTest.AssemblyInfoInputs.cache
+D:\Programming\WPF\SessiaApp\WSUniversalLibUnitTest\obj\Debug\net6.0\WSUniversalLibUnitTest.AssemblyInfo.cs
+D:\Programming\WPF\SessiaApp\WSUniversalLibUnitTest\obj\Debug\net6.0\WSUniversalLibUnitTest.csproj.CoreCompileInputs.cache
+D:\Programming\WPF\SessiaApp\WSUniversalLibUnitTest\bin\Debug\net6.0\CoverletSourceRootsMapping

@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "fd9df803-8daf-41cb-873c-84bae7752b56": {
+      "ProjectGuid": "fd9df803-8daf-41cb-873c-84bae7752b56",
+      "DisplayName": "SessiaApp",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "fe39ad6c-2735-4bb8-bb96-65f1d4534a14": {
+      "ProjectGuid": "fe39ad6c-2735-4bb8-bb96-65f1d4534a14",
+      "DisplayName": "WSUniversalLib",
+      "ColorIndex": 1
+    },
+    "8a9200ed-a074-4581-96c7-ed8d110e7455": {
+      "ProjectGuid": "8a9200ed-a074-4581-96c7-ed8d110e7455",
+      "DisplayName": "WSUniversalLibUnitTest",
+      "ColorIndex": 2
+    },
+    "3968d028-311f-487a-84ac-d10f0e34515a": {
+      "ProjectGuid": "3968d028-311f-487a-84ac-d10f0e34515a",
+      "DisplayName": "WSUniversalLibUnitTest",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}
